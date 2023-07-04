@@ -62,5 +62,5 @@ To Solve for "?" we can cross-multiply and divide:
 Now, divide both sides by 48 to solve for ?
 41/48 = ? * (48/48)
 0.8541667 = ?
-So, 0.41kg is approximately 0.8541667? of 48kg
+So, 0.41kg is approximately 0.8541667% of 48kg
 ````
