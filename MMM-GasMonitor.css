@@ -42,7 +42,7 @@ body {
 }
 
 .gas {
-    height: 100vh;
+    height: 100%;
     display: grid;
     place-items: center;
     margin: 0 1.5rem;
@@ -50,9 +50,9 @@ body {
 
 .gas__card {
     position: relative;
-    width: 100%;
+    width: 50%;
     height: 240px;
-    background-color: var(--container-color);
+    /* background-color: var(--container-color); */
     padding: 1.5rem 2rem;
     border-radius: 1.5rem;
     -webkit-border-radius: 1.5rem;
@@ -88,7 +88,7 @@ body {
     -moz-border-radius: 3rem;
     -ms-border-radius: 3rem;
     -o-border-radius: 3rem;
-    justify-self: flex-end;
+    justify-self: flex-start;
 }
 
 .gas__level {

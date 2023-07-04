@@ -9,12 +9,23 @@ module.exports = NodeHelper.create({
     },
 
     calculateUsage: function(payload) {
-        let usage = payload.dailyUsage
-        let laststored = fs.readFileSync('./input.txt', { encoding: 'utf8', flag: 'r'})
-        let todaysRemaining = laststored - usage
-        console.log(todaysRemaining)
-        fs.writeFileSync('./input.txt', todaysRemaining)
-        this.sendSocketNotification('GAS_MONITOR_SEND', todaysRemaining)
+        let usage = parseInt(payload.dailyUsage)
+
+        const file = `${__dirname}/input.txt`
+
+        let laststored = fs.readFileSync(file, 'utf8')
+
+        let todaysRemaining = parseInt(laststored) - usage
+
+        let newRemain = todaysRemaining.toString()
+
+        if(newRemain <= 0) {
+            fs.writeFileSync(file, "100", 'utf8')
+        } else {
+            fs.writeFileSync(file, newRemain, 'utf8')
+        }
+               
+        this.sendSocketNotification('GAS_MONITOR_SEND', newRemain)
     },
 
     socketNotificationReceived: function(notification, payload) {

@@ -2,7 +2,7 @@ Module.register("MMM-GasMonitor", {
 
     defaults: {
         updateInterval: 86400000,
-        dailyUsage: 0.0085
+        dailyUsage: 0.885
     },
 
     getStyles: function() {
@@ -57,7 +57,7 @@ Module.register("MMM-GasMonitor", {
     socketNotificationReceived: function(notification, payload) {
         if (notification === "GAS_MONITOR_SEND") {
             // do something with the data here
-            this.updatewrapper(payload)
+            this.updateWrapper(payload)
         }
     },
 
@@ -84,7 +84,9 @@ Module.register("MMM-GasMonitor", {
         gas_status.className = "gas__status"
         gas_status.innerHTML = "Low Gas Level"
 
-        gas_data.appendChild(gas_text, gas_percentage, gas_status)
+        gas_data.appendChild(gas_text)
+        gas_data.appendChild(gas_percentage)
+        gas_data.appendChild(gas_status)
         // gas_card.appendChild(gas_data)
 
         const gas_pill = document.createElement("div")
@@ -100,7 +102,8 @@ Module.register("MMM-GasMonitor", {
 
         gas_pill.appendChild(gas_level)
 
-        gas_card.appendChild(gas_data, gas_pill)
+        gas_card.appendChild(gas_data)
+        gas_card.appendChild(gas_pill)
 
         wrapper.appendChild(gas_card)
 
@@ -112,7 +115,7 @@ Module.register("MMM-GasMonitor", {
         const gasLiquid = document.querySelector('.gas__liquid');
         const gasStatus = document.querySelector('.gas__status');
         const gasPercentage = document.querySelector('.gas__percentage');
-        let level = Math.floor(0.95 * 100)
+        let level = parseInt(payload) //Math.floor(0.95 * 100)
         gasPercentage.innerHTML = level + '%'
 
         gasLiquid.style.height = `${level}%` //${parseInt(level * 100)}%
@@ -125,7 +128,7 @@ Module.register("MMM-GasMonitor", {
             gasStatus.innerHTML = 'Low Gas Level'
         }
         else {
-            gasStatus.innerHTML = ''
+            gasStatus.innerHTML = 'Gas Level Ok'
         }
 
         if(level <= 20) {
