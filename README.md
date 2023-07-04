@@ -49,7 +49,7 @@ git pull
 
 - Calculate the number of days you use your gas for. 
 - In my case I used my 48kg for a 117 days.
-- Devide 49kg by 117 days and I get an average of 0.41kg per day used.
+- Devide 48kg by 117 days and I get an average of 0.41kg per day used.
 
 Next you would need to calculate 0.41kg as a percentage.
 ````
