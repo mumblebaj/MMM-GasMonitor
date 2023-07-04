@@ -45,6 +45,10 @@ cd MMM-GasMonitor
 git pull
 
 ````
+## Set initial gas level
+
+To set the initial gas level you need to manually edit the input.txt file and set the value in the file to 100 + your daily average usage, i.e. if your daily average usage is 1.2% you would update input.txt with the value of 101.2.
+
 ## How to calculate your daily usage
 
 - Calculate the number of days you use your gas for. 

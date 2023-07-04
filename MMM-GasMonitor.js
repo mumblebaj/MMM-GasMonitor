@@ -2,7 +2,7 @@ Module.register("MMM-GasMonitor", {
 
     defaults: {
         updateInterval: 86400000,
-        dailyUsage: 0.885
+        dailyUsage: 0.997
     },
 
     getStyles: function() {
