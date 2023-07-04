@@ -36,6 +36,14 @@ Add the module to the modules array in the `config/config.js` file:
           },
 ````
 
+## Display Postions
+Module is best suited to run in the following regions. The other regions appear a little squashed
+- top_bar
+- bottom_bar
+- upper_third
+- lower_third
+- middle_center
+
 ## Updating
 
 To update the module to the latest version, use your terminal to go to your MMM-GasMonitor module folder and type the following command:

@@ -123,12 +123,14 @@ Module.register("MMM-GasMonitor", {
         if (level == 100) {
             gasStatus.innerHTML = 'Gas Level Full'
             gasLiquid.style.height = '103%'
+        } else if (level >= 20 || level <= 100) {
+            gasStatus.innerHTML = 'Gas Level Ok'
         }
         else if(level <= 20) {
             gasStatus.innerHTML = 'Low Gas Level'
         }
         else {
-            gasStatus.innerHTML = 'Gas Level Ok'
+            gasStatus.innerHTML = ''
         }
 
         if(level <= 20) {
