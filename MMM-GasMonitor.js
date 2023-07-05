@@ -13,6 +13,7 @@ Module.register("MMM-GasMonitor", {
         Log.info(`Starting module: ${this.name}`);
         suspended = false;
         this.timer = null;
+        this.payload = null;
 
         this.getData();
         this.scheduleUpdate();
@@ -26,16 +27,12 @@ Module.register("MMM-GasMonitor", {
         Log.info(`Resuming module ${this.name}`);
         Log.debug('with config: ' + JSON.stringify(this.config));
         this.suspended = false;
-        this.updateDom();
+        this.updateWrapper(this.payload);
     },
 
     suspend: function() {
         Log.info(`Suspending module ${this.name}`);
         this.suspend = true;
-    },
-
-    getHeader: function() {
-        return `Gas Monitor`
     },
 
     getData: function() {
@@ -57,7 +54,8 @@ Module.register("MMM-GasMonitor", {
     socketNotificationReceived: function(notification, payload) {
         if (notification === "GAS_MONITOR_SEND") {
             // do something with the data here
-            this.updateWrapper(payload)
+            this.payload = payload;
+            this.updateWrapper(this.payload)
         }
     },
 
@@ -111,6 +109,7 @@ Module.register("MMM-GasMonitor", {
     },
 
     updateWrapper: function (payload) {
+        payload = this.payload;
         let wrapper = document.getElementById("gmId");
         const gasLiquid = document.querySelector('.gas__liquid');
         const gasStatus = document.querySelector('.gas__status');
@@ -145,9 +144,6 @@ Module.register("MMM-GasMonitor", {
         } else {
             gasLiquid.classList.add('gradient-color-green')
             gasLiquid.classList.remove('gradient-color-red', 'gradient-color-orange', 'gradient-color-yellow')
-        }
-
-        this.updateDom();
-        
+        }        
     }
 })
