@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap");
 
-:root {
+#gmId {
     /*========== Colors ==========*/
     /*Color mode HSL(hue, saturation, lightness)*/
     --gradient-color-red: linear-gradient(90deg,
@@ -28,7 +28,7 @@
     --smaller-font-size: .75rem;
 }
 
-* {
+/* * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
@@ -39,7 +39,7 @@ body {
     font-size: var(--normal-font-size);
     background-color: var(--body-color);
     color: var(--text-color);
-}
+} */
 
 .gas {
     height: 100%;
@@ -52,6 +52,10 @@ body {
     position: relative;
     width: 50%;
     height: 240px;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    /* background-color: var(--body-color); */
+    color: var(--text-color);
     /* background-color: var(--container-color); */
     padding: 1.5rem 2rem;
     border-radius: 1.5rem;
@@ -73,8 +77,8 @@ body {
 }
 
 /* To be used if an icon is added in future */
-.gas__status i {
-    font-size: 1.25rem;
+.gas__status {
+    font-size: var(--smaller-font-size);
 }
 
 .gas__pill {
