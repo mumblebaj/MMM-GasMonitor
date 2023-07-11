@@ -25,6 +25,7 @@
 
     --biggest-font-size: 2.5rem;
     --normal-font-size: .938rem;
+    --medium-font-size: .85rem;
     --smaller-font-size: .75rem;
 }
 
@@ -70,6 +71,7 @@ body {
 
 .gas__text {
     margin-bottom: .5rem;
+    font-size: var(--smaller-font-size);
 }
 
 .gas__percentage {
