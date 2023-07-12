@@ -95,6 +95,7 @@ body {
     -ms-border-radius: 3rem;
     -o-border-radius: 3rem;
     justify-self: flex-start;
+    margin-left: 1.5rem;
 }
 
 .gas__level {
