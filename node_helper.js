@@ -25,6 +25,7 @@ module.exports = NodeHelper.create({
             fs.writeFileSync(file, refreshNum.toString(), 'utf8')
         } else {
             fs.writeFileSync(file, newRemain.toString(), 'utf8')
+            console.log(`Writing ${newRemain} to ${file}`)
         }
                
         this.sendSocketNotification('GAS_MONITOR_SEND', newRemain)

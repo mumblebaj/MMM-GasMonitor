@@ -11,7 +11,7 @@ Module.register("MMM-GasMonitor", {
 
     start: function() {
         Log.info(`Starting module: ${this.name}`);
-        suspended = false;
+        this.suspended = false;
         this.timer = null;
         this.payload = null;
 
@@ -122,23 +122,23 @@ Module.register("MMM-GasMonitor", {
         if (level == 100) {
             gasStatus.innerHTML = 'Gas Level Full'
             gasLiquid.style.height = '103%'
-        } else if (level >= 20 || level <= 100) {
+        } else if (level >= 20 || level <= 99) {
             gasStatus.innerHTML = 'Gas Level Ok'
         }
-        else if(level <= 20) {
+        else if(level <= 21) {
             gasStatus.innerHTML = 'Low Gas Level'
         }
         else {
-            gasStatus.innerHTML = ''
+            gasStatus.innerHTML = 'Something went wrong!'
         }
 
         if(level <= 20) {
             gasLiquid.classList.add('gradient-color-red')
             gasLiquid.classList.remove('gradient-color-orange', 'gradient-color-yellow', 'gradient-color-green')
-        } else if(level <= 40) {
+        } else if(level >= 21 || level <= 40) {
             gasLiquid.classList.add('gradient-color-orange')
             gasLiquid.classList.remove('gradient-color-red', 'gradient-color-yellow', 'gradient-color-green')
-        } else if(level <= 80) {
+        } else if(level >= 41 || level <= 80) {
             gasLiquid.classList.add('gradient-color-yellow')
             gasLiquid.classList.remove('gradient-color-red', 'gradient-color-orange', 'gradient-color-green')
         } else {
