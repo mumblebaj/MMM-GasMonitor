@@ -24,9 +24,9 @@
     --body-font: 'Rubik', sans-serif;
 
     --biggest-font-size: 2.5rem;
-    --normal-font-size: .938rem;
-    --medium-font-size: .85rem;
-    --smaller-font-size: .75rem;
+    --normal-font-size: 0.938rem;
+    --medium-font-size: 0.8rem;
+    --smaller-font-size: 0.75rem;
 }
 
 /* * {
@@ -71,7 +71,7 @@ body {
 
 .gas__text {
     margin-bottom: .5rem;
-    font-size: var(--smaller-font-size);
+    font-size: var(--medium-font-size);
 }
 
 .gas__percentage {
@@ -95,7 +95,7 @@ body {
     -ms-border-radius: 3rem;
     -o-border-radius: 3rem;
     justify-self: flex-start;
-    margin-left: 1.5rem;
+    margin-left: 1rem;
 }
 
 .gas__level {
