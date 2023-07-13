@@ -114,7 +114,8 @@ Module.register("MMM-GasMonitor", {
         const gasLiquid = document.querySelector('.gas__liquid');
         const gasStatus = document.querySelector('.gas__status');
         const gasPercentage = document.querySelector('.gas__percentage');
-        let level = parseInt(payload) //Math.floor(0.95 * 100)
+        let level1 = parseFloat(payload) //Math.floor(0.95 * 100)
+        let level = level1.toFixed(2);
         gasPercentage.innerHTML = level + '%'
 
         gasLiquid.style.height = `${level}%` //${parseInt(level * 100)}%

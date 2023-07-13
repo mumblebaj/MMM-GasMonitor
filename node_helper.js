@@ -9,15 +9,15 @@ module.exports = NodeHelper.create({
     },
 
     calculateUsage: function(payload) {
-        let usage = parseInt(payload.dailyUsage)
+        let usage = payload.dailyUsage.toFixed(2);
 
         const file = `${__dirname}/input.txt`
 
         let laststored = fs.readFileSync(file, 'utf8')
 
-        let todaysRemaining = parseInt(laststored) - usage
+        let todaysRemaining = parseFloat(laststored) - usage
 
-        let newRemain = todaysRemaining.toString()
+        let newRemain = todaysRemaining.toFixed(2)
 
         let refreshNum = 100 + usage
 
@@ -28,7 +28,7 @@ module.exports = NodeHelper.create({
             console.log(`Writing ${newRemain} to ${file}`)
         }
                
-        this.sendSocketNotification('GAS_MONITOR_SEND', newRemain)
+        this.sendSocketNotification('GAS_MONITOR_SEND', newRemain.toString())
     },
 
     socketNotificationReceived: function(notification, payload) {
