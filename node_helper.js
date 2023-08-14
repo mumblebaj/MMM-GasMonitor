@@ -10,6 +10,7 @@ module.exports = NodeHelper.create({
 
     calculateUsage: function(payload) {
         let usage = payload.dailyUsage.toFixed(2);
+        let refnum = 100;
 
         const file = `${__dirname}/input.txt`
 
@@ -19,11 +20,11 @@ module.exports = NodeHelper.create({
 
         let newRemain = todaysRemaining.toFixed(2)
 
-        let refreshNum = 100
+        let refreshNum = parseFloat(refnum + parseFloat(usage)).toFixed(2);
 
         if(newRemain <= 0) {
             fs.writeFileSync(file, refreshNum.toString(), 'utf8')
-            newRemain = refreshNum
+            newRemain = parseFloat(refreshNum - parseFloat(usage)).toFixed(2)
         } else {
             fs.writeFileSync(file, newRemain.toString(), 'utf8')
             console.log(`Writing ${newRemain} to ${file}`)
