@@ -20,11 +20,10 @@ module.exports = NodeHelper.create({
 
         let newRemain = todaysRemaining.toFixed(2)
 
-        let refreshNum = parseFloat(refnum + parseFloat(usage)).toFixed(2);
-
         if(newRemain <= 0) {
+            let refreshNum = parseFloat(refnum - parseFloat(usage)).toFixed(2);
             fs.writeFileSync(file, refreshNum.toString(), 'utf8')
-            newRemain = parseFloat(refreshNum - parseFloat(usage)).toFixed(2)
+            newRemain = refnum;
         } else {
             fs.writeFileSync(file, newRemain.toString(), 'utf8')
             console.log(`Writing ${newRemain} to ${file}`)
