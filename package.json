@@ -1,12 +1,16 @@
 {
   "name": "mmm-gasmonitor",
   "version": "1.0.0",
-  "description": "",
+  "description": "MagicMirror Module to monitor Gas tank levels",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mumblebaj/MMM-GasMonitor.git"
+  },
+  "keywords": ["MagicMirror", "GasMonitor"],
   "author": "",
   "license": "ISC"
 }
