@@ -4,7 +4,7 @@ A [MagicMirror²](https://magicmirror.builders) module to display the status of 
 
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](LICENSE)
 
-![Example](images/image-1.png)
+![Example](images/screenshot.png)
 ![Example](images/image-2.png)
 ![Example](images/image-3.png)
 ![Example](images/image-4.png)

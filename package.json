@@ -1,7 +1,7 @@
 {
   "name": "mmm-gasmonitor",
   "version": "1.0.1",
-  "description": "MagicMirror Module to monitor Gas tank levels",
+  "description": "MagicMirror² Module to monitor Gas tank levels",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,8 +11,8 @@
     "url": "git+https://github.com/mumblebaj/MMM-GasMonitor.git"
   },
   "keywords": [
-    "MagicMirror",
-    "Growatt"
+    "MagicMirror²",
+    "GasMonitor"
   ],
   "author": "mumblebaj",
   "license": "ISC"
