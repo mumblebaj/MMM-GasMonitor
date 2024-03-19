@@ -23,18 +23,6 @@ Module.register("MMM-GasMonitor", {
         Log.info(`Stopping module ${this.name}`)
     },
 
-    resume: function() {
-        Log.info(`Resuming module ${this.name}`);
-        Log.debug('with config: ' + JSON.stringify(this.config));
-        this.suspended = false;
-        this.updateWrapper(this.payload);
-    },
-
-    suspend: function() {
-        Log.info(`Suspending module ${this.name}`);
-        this.suspend = true;
-    },
-
     getData: function() {
         this.sendSocketNotification("GAS_MONITOR_GET", this.config)
     },
