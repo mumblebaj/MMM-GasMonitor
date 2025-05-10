@@ -2,7 +2,10 @@
 
 A [MagicMirror²](https://magicmirror.builders) module to display the status of your household gas
 
+[![Platform](https://img.shields.io/badge/platform-MagicMirror-informational)](https://MagicMirror.builders)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](LICENSE)
+
+<a href="https://www.buymeacoffee.com/mumblebaj" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 45px !important;width: 180px !important;" ></a>
 
 ![Example](images/screenshot.png)
 ![Example](images/image-2.png)
